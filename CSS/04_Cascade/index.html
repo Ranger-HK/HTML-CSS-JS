@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Cascade</title>
+  <link href="assets/img/Screenshot_1.png" rel="icon">
+  <style>
+
+    /* 10 */
+    .title {
+      color: orange;
+    }
+
+    /* 100 */
+    #mainHeader {
+      color: purple;
+    }
+
+    /* 100+10+100 = 210 */
+    #body .subSection #mainHeader {
+      color: red;
+    }
+
+    /* 100+10+100 = 210 */
+    #body .subSection #mainHeader {
+      color: darkblue;
+    }
+
+    /* 1+1+1+1+1 = 5*/
+    body>section>section>article>h1 {
+      color: aqua;
+    }
+
+    /* 1+100+1+100+1+10+1+100+1+10+100 = 425 */
+    body#body>section#mainSection>section.subSection>article#mainArticle>h1.title#mainHeader {
+      color: deeppink !important;
+    }
+
+    /* 1+100+1+100+1+10+1+100+1+10+100 = 425 */
+    body#body>section#mainSection>section.subSection>article#mainArticle>h1.title#mainHeader {
+      color: deepskyblue;
+    }
+
+    /* 1+1+100 = 102 */
+    body h1#mainHeader {
+      color: blueviolet;
+    }
+  </style>
+</head>
+
+<body id="body">
+<section id="mainSection">
+  <section class="subSection">
+    <article id="mainArticle">
+      <!-- 1000 -->
+      <h1 class="title" id="mainHeader" style="color: yellow">Hello There.. Select ME</h1>
+    </article>
+  </section>
+</section>
+
+</body>
+
+<!-- deeppink , yellow , deepskyblue , darkblue , red , blueviolet , purple , orange , aqua -->
+
+</html>

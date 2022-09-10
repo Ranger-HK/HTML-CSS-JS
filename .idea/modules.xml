@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CSS/01_Basic/01_Basic.iml" filepath="$PROJECT_DIR$/CSS/01_Basic/01_Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSS/02_Selectors/02_Selectors.iml" filepath="$PROJECT_DIR$/CSS/02_Selectors/02_Selectors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSS/03_Traversing/03_Traversing.iml" filepath="$PROJECT_DIR$/CSS/03_Traversing/03_Traversing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSS/04_Cascade/04_Cascade.iml" filepath="$PROJECT_DIR$/CSS/04_Cascade/04_Cascade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSS/CSS.iml" filepath="$PROJECT_DIR$/CSS/CSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTML/HTML.iml" filepath="$PROJECT_DIR$/HTML/HTML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTML-CSS-JS.iml" filepath="$PROJECT_DIR$/HTML-CSS-JS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JS/JS.iml" filepath="$PROJECT_DIR$/JS/JS.iml" />
+    </modules>
+  </component>
+</project>

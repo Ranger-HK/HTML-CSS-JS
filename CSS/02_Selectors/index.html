@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS SELECTORS FOR MY WORK</title>
+  <link href="assets/img/Screenshot_1.png" rel="icon">
+  <style>
+    *{
+      color: rgb(219, 167, 23);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    h2{
+      color: blue;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: larger;
+    }
+
+    #id1{
+      color: rgb(252, 216, 11);
+      font-size: small;
+    }
+
+    .para{
+      color: green;
+      font-size: 20px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+
+    [id]{
+      color: red;
+      font-size: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    [id="a"]{
+      color: rgb(4, 226, 241);
+      font-size: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    /* h2,p,pre{
+       background-color: yellow;
+       border: 1px;
+       font-size: 15px;
+   }
+    */
+    li:first-child{
+      color: rgb(236, 173, 0);
+    }
+
+    li:last-child{
+      color: rgb(236, 173, 0); ;
+    }
+
+    li:nth-child(4){
+      color: rgb(236, 173, 0);
+    }
+
+    li:hover{
+      color: red ;
+    }
+
+    p::first-letter{
+      color: red;
+      font-size: 25px;
+    }
+
+    p::selection{
+      background-color: red;
+      color: aliceblue;
+
+    }
+
+    li::marker{
+      color: green;
+      size: 20px;
+    }
+
+    p::first-line{
+      color: rgb(0, 75, 141);
+    }
+
+
+    body header h1  {
+      color: aliceblue;
+      background-color: rgb(241, 185, 0);
+    }
+
+    header > h1 {
+      color: beige;
+      background-color: red;
+    }
+
+    body > footer > h1 {
+      color: aliceblue;
+      background-color: rgb(34, 28, 49);
+    }
+
+    h1 + p {
+      color: red;
+    }
+
+
+    footer h1 ~ p {
+      color: violet;
+    }
+
+
+  </style>
+
+</head>
+<body>
+<header>
+  <h1>Bye Good Nht</h1>
+  <div>
+    <h1>bye</h1>
+  </div>
+  <h2>Bye Good Night</h2>
+  <h2 id="id1">Bye Good Night</h2>
+  <h2 id="">Bye Good Night</h2>
+  <h2 class="para">Bye Good Night</h2>
+  <h2>Bye Good Night</h2>
+
+
+  <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Adipisci sunt omnis quis magni suscipit expedita, rerum ipsam voluptas mollitia recusandae aspernatur, placeat optio dicta illum. Doloremque, esse! In, consequatur iusto.</p>
+  <pre class="para">Lorem ipsum, dolor sit amet
+        consectetur adipisicing elit. Culpa tenetur ducimus atque dolore eos voluptatum nisi, quam pariatur deleniti ipsam
+    corporis quod excepturi similique qui? Eum dolore laboriosam animi atque.</pre>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi consequuntur ab fugiat dicta necessitatibus rem voluptas cum, eligendi in a laudantium architecto corporis labore fugit neque tempore non reiciendis?</p>
+  <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat, cum voluptatum laboriosam sint modi pariatur. Ratione qui quas corrupti voluptas aperiam doloribus odit incidunt temporibus natus, illum, sed officiis!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis temporibus obcaecati nisi itaque distinctio omnis? Nisi, vitae, sit fugit nesciunt commodi placeat amet corporis quia et enim, distinctio libero!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis temporibus obcaecati nisi itaque distinctio omnis? Nisi, vitae, sit fugit nesciunt commodi placeat amet corporis quia et enim, distinctio libero!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis temporibus obcaecati nisi itaque distinctio omnis? Nisi, vitae, sit fugit nesciunt commodi placeat amet corporis quia et enim, distinctio libero!</p>
+  <p id="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis temporibus obcaecati nisi itaque distinctio omnis? Nisi, vitae, sit fugit nesciunt commodi placeat amet corporis quia et enim, distinctio libero!</p>
+  <p id="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis temporibus obcaecati nisi itaque distinctio omnis? Nisi, vitae, sit fugit nesciunt commodi placeat amet corporis quia et enim, distinctio libero!</p>
+  <h1>hi </h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus optio minus voluptatibus cumque, ad architecto libero sed eum voluptatem nostrum! Blanditiis illo, a quas impedit voluptates quaerat aperiam qui ex.</p>
+  <ul>
+    <li>Ravindu</li>
+    <li>A</li>
+    <li>B</li>
+    <li id="T">C</li>
+    <li>D</li>
+    <li>E</li>
+    <li>F</li>
+    <li>Ravindu</li>
+
+
+
+  </ul>
+
+  <ol>
+    <li>Ravindu</li>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+    <li>F</li>
+  </ol>
+
+</header>
+</body>
+<footer>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, alias quibusdam. Maxime sed temporibus dolorem nobis corrupti officia provident quidem quaerat quae iusto aut, neque at ratione est. Atque, harum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+
+  <h1>hello in side the h1 </h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum, ad quae doloribus consequatur cupiditate. Praesentium ipsum perferendis amet architecto quaerat vel error? Placeat facilis necessitatibus dicta illo fugit iste!</p>
+</footer>
+</html>
