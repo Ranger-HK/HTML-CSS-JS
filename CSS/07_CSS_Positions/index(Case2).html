@@ -16,12 +16,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono:wght@300;400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fonts/css/all.css">
     <style>
         body>header {
             background-color: rgb(255, 255, 255);
             height: 80px;
             position: relative;
-            box-shadow: 0px -4px 21px 11px #95a5a6;
+            box-shadow: 1px -3px 11px 11px #323b3b;
 
         }
 
@@ -38,15 +39,21 @@
             bottom: 0px;
             list-style: none;
             font-family: 'Roboto Mono', monospace;
+           
         }
 
         body>header>ul>li {
             display: inline;
             padding: 3px;
-
+           
         }
 
-        li:hover {
+        body>header>ul>li>a{
+            text-decoration: none;
+        }
+
+
+        header>ul>li:hover {
             color: red;
             cursor: pointer;
         }
@@ -62,41 +69,121 @@
             bottom: 0px;
             width: 250px;
             position: absolute;
-            background-color: #0066cc;
+            background-color: #168aad;
 
         }
 
         body>main>nav>ul {
             list-style: none;
-            font-size: 30px;
-            /* font-family: 'Oswald', sans-serif; */
+            font-size: 25px;
             font-family: 'Roboto Mono', monospace;
             margin-top: 56px;
-            color: aliceblue;
         }
 
         body>main>nav>ul>li {
             padding-bottom: 40px;
-        }
-
-
-        body>main>section>div>img {
-            width: 200px;
 
         }
 
-        main>section>div {
+        body>main>nav>ul>li>a {
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        a:hover {
+            color: rgb(252, 206, 0);
+        }
+
+        main>nav>ul>li>i {
+            color: #040607;
+            margin-right: 20px;
+            cursor: pointer;
+
+
+        }
+
+        main>nav>ul>li>i:hover {
+            color: white;
+        }
+
+        main>section {
+            margin-left: 245px;
+            padding: 10px;
+            min-height: 800px
+        }
+
+        body>main>section>p {
+            font-size: 20px;
+            font-family: 'Roboto Mono';
+
+        }
+
+
+        body>main>section>section {
+            height: 300px;
             position: relative;
-            display: inline-block;
-            border: 2px solid red;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
+
 
         }
 
-    
+        body>main>section>section>div {
+            width: calc(100%/3);
+            position: absolute;
+            height: 100%;
+            background-size: cover;
+
+
+        }
+
+        body>main>section>section>div:nth-child(1) {
+            left: 0px;
+            background-color: yellow;
+            background-image: url(assets/imges/img1.jpg);
+            border-right: 5px solid white;
+
+        }
+
+        body>main>section>section>div:nth-child(2) {
+            left: calc(100%/3);
+            background-color: rgb(37, 37, 37);
+            background-image: url(assets/imges/img2.jpg);
+            border-left: 5px solid white;
+
+
+        }
+
+        body>main>section>section>div:nth-child(3) {
+            right: 0px;
+            background-color: rgb(255, 0, 221);
+            background-image: url(assets/imges/img3.jpg);
+            border-left: 5px solid white;
+
+        }
+
+        footer {
+            background-color: #75878f;
+            height: 50px;
+
+        }
+
+        footer>div>p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-family: 'Roboto Mono';
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 15px;
+            color: whitesmoke;
+
+        }
+
+        footer>div>p:hover {
+            color: #fee440;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -104,110 +191,30 @@
     <header>
         <img src="assets/imges/ijselogo.png" alt="logo">
         <ul>
-            <li>Home</li>
-            <li>Service</li>
-            <li>Contacts</li>
-            <li>About Us</li>
+            <li><a href="https://www.google.com/">Home</a></li>
+            <li><a href="index(Case1).html">Service</a></li>
+            <li><a href="index(Case1).html">Contacts</a></li>
+            <li><a href="index(Case1).html">About Us</a></li>
         </ul>
     </header>
     <main>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Service</li>
-                <li>Contacts</li>
-                <li>About Us</li>
+                <li><i class="fa-solid fa-house"></i><a href="https://www.google.com/">Home</a></li>
+                <li><i class="fa-brands fa-servicestack"></i><a href="index(Case1).html">Service</a></li>
+                <li><i class="fa-solid fa-user"></i><a href="index(Case1).html">Contacts</a></li>
+                <li><i class="fa-solid fa-id-badge"></i><a href="index(Case1).html">About Us</a></li>
             </ul>
         </nav>
         <section>
-            <div><img src="assets/imges/img1.jpg" alt="img"></div>
-            <div><img src="assets/imges/img2.jpg" alt="img"></div>
-            <div><img src="assets/imges/img3.jpg" alt="img"></div>
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </section>
 
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
-                voluptatum,
-                debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
-                aliquid minima?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus numquam minus alias
                 voluptatum,
                 debitis accusantium et, rem quaerat, molestias facilis eaque dicta animi recusandae hic corporis cumque
@@ -251,7 +258,7 @@
     </main>
     <footer>
         <div>
-            <p>Develop By Ravindu Prathibha</p>
+            <p>Developed By Ravindu Prathibha</p>
         </div>
     </footer>
 </body>
