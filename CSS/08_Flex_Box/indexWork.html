@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Before Flex</title>
+  <link rel="stylesheet" href="../07_CSS_Positions/assets/css/normalize.css">
+  <link rel="icon" href="../07_CSS_Positions/assets/imges/Screenshot_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../07_CSS_Positions/assets/css/fonts/css/all.css">
+  <style>
+    body>section {
+      border: 2px solid rgb(208, 255, 0);
+      height: 400px;
+      position: relative;
+    }
+
+    body>section>div {
+      border: 5px solid rgb(0, 0, 0);
+      height: 100%;
+      position: absolute;
+      width: calc(100%/4);
+
+    }
+
+    div:nth-child(1) {
+      left: 0px;
+      background-color: yellow;
+    }
+
+    div:nth-child(2) {
+      left:calc((100%/4)) ;
+      background-color: rgb(55, 0, 255);
+
+    }
+
+    div:nth-child(3) {
+      left:calc((100%/4)*2) ;
+      background-color: rgb(255, 0, 242);
+    }
+
+    div:nth-child(4) {
+      right: 0px;
+      background-color: rgb(255, 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+
+
+
+</body>
+
+</html>
