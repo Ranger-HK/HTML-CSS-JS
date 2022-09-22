@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grid</title>
+  <link rel="icon" href="assets/imges/Screenshot_1.png">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <style>
+    section>div{
+
+      border: 1px solid black;
+    }
+
+    body>section{
+      border: 1px solid red;
+      height: 500px;
+      width: 500px;
+      display: grid;
+      /* grid-template-rows: 100px 100px 100px 100px 100px ; */
+      /* grid-template-rows: repeat(5,100px); */
+      grid-template-rows: repeat(5,1fr) ;
+
+      grid-gap: 2px;
+
+      /* grid-template-columns: 250px 250px ; */
+      /* grid-template-columns: repeat(2,250px); */
+      grid-template-columns: repeat(2,1fr) ;
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+</body>
+
+</html>

@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Flex_USe</title>
+    <title>After_Flex</title>
+    <link rel="stylesheet" href="../07_CSS_Positions/assets/css/normalize.css">
+    <link rel="icon" href="../07_CSS_Positions/assets/imges/Screenshot_1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../07_CSS_Positions/assets/css/fonts/css/all.css">
+    <style>
+        body>section {
+            border: 2px solid yellow;
+            height: 400px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap:nowrap;
+            /* align-items: center;
+            justify-content: space-around; */
+
+
+
+        }
+
+        body>section>div {
+            border: 2px solid rgb(253, 0, 0);
+            width: 400px;
+            height: 100px;
+            /* flex-shrink:0; */
+            /* flex-grow: 1;  
+            flex-basis: 100px; */ 
+
+        }
+
+        div:nth-child(1) {
+            /* left: 0px; */
+            background-color: yellow;
+            /* flex-grow: 1;
+            flex-basis: 100px; */
+        }
+
+        div:nth-child(2) {
+            /* left:calc((100%/4)) ; */
+            background-color: rgb(55, 0, 255);
+            /* flex-grow: 1;
+            flex-basis: 100px; */
+        }
+
+        div:nth-child(3) {
+            /* left:calc((100%/4)*2) ; */
+            background-color: rgb(255, 0, 242);
+            /* flex-grow: 1;
+            flex-basis: 100px; */
+        }
+
+        div:nth-child(4) {
+            /* right: 0px; */
+            background-color: rgb(255, 0, 0);
+            /* flex-basis: 100px;
+            flex-grow: 1; */
+        }
+    </style>
 </head>
+
 <body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </section>
+
+
 
 </body>
+
 </html>
