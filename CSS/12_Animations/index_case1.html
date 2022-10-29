@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case_1</title>
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/imges/Screenshot_1.png" rel="icon">
+    <link href="assets/css/fonts/css/all.css" rel="stylesheet">
+    <style>
+
+        html, body {
+            position: relative;
+            background-color: #ffcd00;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+
+        section {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            border-radius: 25px;
+            animation-name: box;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: none;
+            background: url("assets/imges/spring-swing-car.gif");
+            background-size: cover;
+            background-position: center;
+            border: 2px solid black;
+        }
+
+        @keyframes box {
+            0% {
+                left: 0px;
+                top: 0px;
+                background-color: blueviolet;
+            }
+            25% {
+                left: 1700px;
+                top: 0px;
+                background-color: #ffb900;
+                transform: rotate(90deg);
+
+            }
+
+            50% {
+                left: 1700px;
+                top: 750px;
+                background-color: #07ff00;
+                transform: rotate(180deg);
+            }
+
+            75% {
+                left: 0px;
+                top: 750px;
+                background-color: #00ffff;
+                transform: rotate(270deg);
+
+            }
+            100% {
+                left: 0px;
+                top: 0px;
+                background-color: #ff4600;
+                transform: rotate(360deg);
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<section>
+
+</section>
+</body>
+</html>
