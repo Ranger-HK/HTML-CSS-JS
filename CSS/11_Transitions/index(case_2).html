@@ -8,7 +8,9 @@
     <link href="assets/imges/Screenshot_1.png" rel="icon">
     <style>
 
-        section {
+
+        /*-----------------------------------   WAY 01 TO MAKE CASE_2* ( Normal Way) ----------- START STYLES---------------------------------------------------*/
+    /*    section {
             width: 400px;
             height: 400px;
             border: 25px solid #000;
@@ -52,9 +54,143 @@
             transform: rotate(-360deg);
             color: white ;
 
+        }*/
+
+        /*-----------------------------------------------------------   END STYLES -----------------------------------------------------------*/
+
+
+
+        /*-----------------------------------   WAY 02 TO MAKE CASE_2*  ( Using Cosmetic Element )----------- START STYLES---------------------------------------------------*/
+
+/*
+
+        section {
+            width: 400px;
+            height: 400px;
+            border-radius: 100%;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            background-color: mediumpurple;
+
+        }
+
+        section > h1 {
+            color: #ffb908;
+            font-size: 58px;
+            font-weight: 500;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+            z-index: auto;
+
+        }
+
+        section:hover h1{
+            transition: all 2s;
+            color: white ;
+
+        }
+
+        section::after{
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            border: 25px solid #000;
+            border-radius: 100%;
+            border-top: 25px solid #ff253a;
+        }
+
+        section:hover::after{
+            cursor: pointer;
+            transition: all 2s;
+            transform: rotate(360deg);
+
+        }
+*/
+
+        /*-----------------------------------------------------------   END STYLES -----------------------------------------------------------*/
+
+
+        /*-----------------------------------   WAY 03 TO MAKE CASE_2* ( after transition width and height increasing  Using Cosmetic Element  ----------- START STYLES---------------------------------------------------*/
+
+
+        section {
+            width: 400px;
+            height: 400px;
+            border-radius: 100%;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            background-color: mediumpurple;
+
+        }
+
+        section > h1 {
+            color: #ffb908;
+            font-size: 58px;
+            font-weight: 500;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+            z-index: auto;
+
+        }
+
+        section:hover h1{
+            transition: all 2s;
+            color: white ;
+
+        }
+
+        section:hover{
+            width: 600px;
+            height: 600px;
+            border-radius: 100%;
+            transition: all 2s;
+            background-color: #ffb908;
+        }
+
+        section::after{
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            border: 25px solid #000;
+            border-radius: 100%;
+            border-top: 25px solid #ff253a;
+        }
+
+        section:hover::after{
+            cursor: pointer;
+            transition: all 2s;
+            transform: rotate(360deg);
+
         }
 
 
+        /*-----------------------------------------------------------   END STYLES -----------------------------------------------------------*/
 
 
     </style>
