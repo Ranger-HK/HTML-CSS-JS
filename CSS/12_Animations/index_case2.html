@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case_2</title>
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/imges/Screenshot_1.png" rel="icon">
+    <link href="assets/css/fonts/css/all.css" rel="stylesheet">
+    <style>
+
+        body{
+            background-color: #008353ed;
+
+        }
+
+        main{
+            width: 700px;
+            height: 400px;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            overflow: hidden;
+            border: 3px solid white;
+
+        }
+
+        main>section{
+            width: 400%;
+            height: 100%;
+            /*border: 3px solid red;*/
+            display: flex;
+            animation-name: slideme;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+
+
+        }
+
+        main>section>div{
+            /*border: 3px solid green;*/
+            width: 100%;
+        }
+
+        main>section>div:nth-child(1){
+            background: url("assets/imges/img1.jpg");
+            background-size: cover;
+            background-position: center;
+
+
+        }
+
+        main>section>div:nth-child(2){
+            background: url("assets/imges/img2.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(3){
+            background: url("assets/imges/img3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(4){
+            background: url("assets/imges/img4.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes slideme {
+            0%,15%{
+                transform: translateX(0);
+            }
+            25%,40%{
+                transform: translateX(-25%);
+            }
+            50%,70%{
+                transform: translateX(-50%);
+            }
+
+            80%,100%{
+                transform: translateX(-75%);
+            }
+
+        }
+
+        body>section{
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            width: 100%;
+            height: max-content;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</main>
+<section>
+    <h1>Slide Me</h1>
+</section>
+</body>
+</html>
