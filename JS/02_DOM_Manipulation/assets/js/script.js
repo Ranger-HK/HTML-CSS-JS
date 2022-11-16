@@ -16,6 +16,11 @@ document.getElementsByTagName("button")[0].addEventListener("click", function ()
 document.getElementById("btn2").addEventListener("click", function () {
     alert("Remove Done");
 
-    document.getElementById("display").innerText=document.getElementById("ipf").value;
+    document.getElementById("display").innerText = document.getElementById("ipf").value;
 });
 
+// Add New image to attribute
+
+document.getElementById("img").getAttributeNames();
+document.getElementById("img").getAttribute("src");
+document.getElementById("img").setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYIX4fdymadei7FiL-19pxFAWPLEJgQlNEww&usqp=CAU");
