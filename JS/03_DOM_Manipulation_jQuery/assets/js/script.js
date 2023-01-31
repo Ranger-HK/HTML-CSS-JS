@@ -12,3 +12,9 @@ var RS = jQuery.noConflict();
 RS("h1").text("Helloooo ");*/
 
 $("h1").text("Hello Js");
+console.log($("*").text());
+
+
+$("#h2id").css("color","red");
+$(".clash3").css("color","red");
+// $("*").css("color","yellow");
