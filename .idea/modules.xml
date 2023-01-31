@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/JS/01_Basics/01_Basics.iml" filepath="$PROJECT_DIR$/JS/01_Basics/01_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/JS/02_DOM_Manipulation/02_DOM_Manipulation.iml" filepath="$PROJECT_DIR$/JS/02_DOM_Manipulation/02_DOM_Manipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSS/02_Selectors/02_Selectors.iml" filepath="$PROJECT_DIR$/CSS/02_Selectors/02_Selectors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JS/03_DOM_Manipulation_jQuery/03_DOM_Manipulation_jQuery.iml" filepath="$PROJECT_DIR$/JS/03_DOM_Manipulation_jQuery/03_DOM_Manipulation_jQuery.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSS/03_Traversing/03_Traversing.iml" filepath="$PROJECT_DIR$/CSS/03_Traversing/03_Traversing.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSS/04_Cascade/04_Cascade.iml" filepath="$PROJECT_DIR$/CSS/04_Cascade/04_Cascade.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSS/05_Box_Model/05_Box_Model.iml" filepath="$PROJECT_DIR$/CSS/05_Box_Model/05_Box_Model.iml" />

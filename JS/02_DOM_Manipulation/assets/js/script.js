@@ -45,3 +45,4 @@ document.getElementById("btn4").addEventListener("click", function () {
     document.getElementById("ipf").value;
     document.querySelector("ul").innerHTML +="<li>"+document.getElementById("ipf").value+"</li>";
 });
+
