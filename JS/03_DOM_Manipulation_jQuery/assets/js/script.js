@@ -18,3 +18,18 @@ console.log($("*").text());
 $("#h2id").css("color","red");
 $(".clash3").css("color","red");
 // $("*").css("color","yellow");
+
+$("ul>li:nth-child(2)").css("color","red");
+$("body>p").css("color","blue");
+$("h1,h2").css("color","blue");
+
+$("#btn1").click(function (){
+    alert("Selected");
+    $("h1").css("color","green")
+})
+
+$("#btn2").click(function (){
+    alert("Selected btn2");
+    $("#ipf").val()
+    $("h2").text( $("#ipf").val())
+})
