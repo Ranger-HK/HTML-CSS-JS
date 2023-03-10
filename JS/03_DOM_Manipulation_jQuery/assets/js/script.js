@@ -33,3 +33,28 @@ $("#btn2").click(function (){
     // $("#ipf").val()
     $("h2").text( $("#ipf").val())
 })
+//replace ul
+
+$("#btnU").click(function (){
+    alert("Click Up")
+    $("ul>li:nth-child(1)").text( $("#ipf").val())
+});
+
+$("#btnD").click(function (){
+    alert("click down")
+    $("ul>li:nth-child(3)").text( $("#ipf").val())
+});
+
+
+//add new ul
+
+$("#btnApp").click(function (){
+    alert("Appended")
+    $("ul").append("<li>"+$('#ipf').val()+"</li>")
+})
+
+$("#btnPre").click(function (){
+    alert("Prepend")
+    $("ul").prepend("<li>"+$('#ipf').val()+"</li>")
+});
+
