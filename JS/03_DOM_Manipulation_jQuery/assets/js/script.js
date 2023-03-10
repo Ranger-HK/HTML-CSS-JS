@@ -58,3 +58,12 @@ $("#btnPre").click(function (){
     $("ul").prepend("<li>"+$('#ipf').val()+"</li>")
 });
 
+
+//Image Add
+
+$("#btnImg").click(function (){
+    alert("Img Set")
+    $("#img").attr("src",$("#ipf").val());
+
+});
+
