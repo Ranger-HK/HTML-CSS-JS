@@ -30,6 +30,6 @@ $("#btn1").click(function (){
 
 $("#btn2").click(function (){
     alert("Selected btn2");
-    $("#ipf").val()
+    // $("#ipf").val()
     $("h2").text( $("#ipf").val())
 })
