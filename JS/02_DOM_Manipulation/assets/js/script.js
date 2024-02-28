@@ -6,13 +6,14 @@ document.getElementsByTagName("p")[0].style.backgroundColor = "red"
 document.getElementsByTagName("p")[0].style.color = "white "
 document.querySelector("input").value = "C001";
 
-// for remove content by affter click button
+// for remove content by after click button
 document.getElementsByTagName("button")[0].addEventListener("click", function () {
     document.getElementsByTagName("h2")[0].remove();
     alert("Remove Done");
 
 });
 
+// for Change content by after click button
 document.getElementById("btn2").addEventListener("click", function () {
     alert("Remove Done");
 
@@ -33,14 +34,14 @@ document.getElementById("btn3").addEventListener("click", function () {
     document.getElementById("img").setAttribute("src", document.getElementById("ipf").value);
 });
 
-// add new li element
+// Select and Add li element
 
 document.querySelector("ul").innerHTML;
 document.querySelector("ul").innerHTML = "<li>CMJD</li>";
-document.querySelector("ul").innerHTML = "<li>CMJD</li> <li>GDSE</li>"; // ----------> 1st way
-document.querySelector("ul").innerHTML += "<li>ABSD</li>"; //----------> 1st way
+document.querySelector("ul").innerHTML = "<li>CMJD</li> <li>GDSE</li>"; // ----------> 1st way to add new one
+document.querySelector("ul").innerHTML += "<li>ABSD</li>"; //----------> 2st way to add new one
 
-
+// add new li element using typing value of textFiled
 document.getElementById("btn4").addEventListener("click", function () {
     document.getElementById("ipf").value;
     document.querySelector("ul").innerHTML +="<li>"+document.getElementById("ipf").value+"</li>";
