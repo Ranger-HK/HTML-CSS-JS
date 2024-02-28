@@ -61,13 +61,16 @@ console.log($("*").text());
 /*$("h1,h2,h3").remove();*/
 
 
-$("#h2id").css("color","red");
+
+$("#display").css("color","yellow");
 $(".clash3").css("color","red");
 // $("*").css("color","yellow");
 
 $("ul>li:nth-child(2)").css("color","red");
-$("body>p").css("color","blue");
+$("body>p").css("color","pink");
 $("h1,h2").css("color","blue");
+
+
 
 $("#btn1").click(function (){
     alert("Selected");
@@ -79,6 +82,8 @@ $("#btn2").click(function (){
     // $("#ipf").val()
     $("h2").text( $("#ipf").val())
 })
+
+
 //replace ul
 
 $("#btnU").click(function (){
