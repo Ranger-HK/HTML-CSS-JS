@@ -6,13 +6,59 @@
 
 
 // Create new variable and dom manipulate use Jquery
-
 /*
 var RS = jQuery.noConflict();
 RS("h1").text("Helloooo ");*/
 
+
+/* all one get print in console
 $("h1").text("Hello Js");
+console.log($("*").text());*/
+
+/* CSS SELECTORS USING
+/!*we can select any dom element from type*!/
+$("h1").text("Hello DOM");
+
+/!*id selector*!/
+$("#display").css('color', 'red');
+
+/!*class selector*!/
+$(".clash3").css('background', 'red');
+
+/!*attribute selector*!/
+$("[id]").remove();
+
+/!*pseudo - class selector*!/
+$("li:first-child").css('color', 'red');
+$("li:last-child").css('color', 'green');
+$("li:nth-child(2)").css('color', 'orange');
+
+/!*universal selector*!/
 console.log($("*").text());
+*/
+
+
+/*  What about CSS Combinators..?*/
+
+/* Child combinator
+ Decendent Combinator
+ Adjacent Combinator
+ Generel Siblings Combinator*/
+
+/*Child Combinator*/
+// $("body>ul>li").css('color','red');
+
+// Decendant Combinator
+// $("body li").css("color", "orange");
+
+// Adjacent Combinator
+// $("h3+p").css("background", 'green');
+
+//General Siblings Combinator
+// $("h3~p").css("background", 'green');
+
+//selector grouping
+/*$("h1,h2,h3").remove();*/
 
 
 $("#h2id").css("color","red");
