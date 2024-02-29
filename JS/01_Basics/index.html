@@ -190,6 +190,171 @@
 
     //JS DATA TYPES
 
+    /*   6 Primitive */
+    // String *
+    // Number *
+    // Boolean *
+    // Undefined *
+    // BigInt *
+    // Symbol
+
+    /*Structural Types*/
+    // Objects *
+    // Functions
+
+
+    /*Structural Root Primitive*/
+    // Null *
+
+
+
+    /*    Number*/
+    // Numbers
+    /* decimal
+     binary - 0b or 0B
+     octal - 0
+     hexadecimal - 0x
+     floating point* 7.9 */
+
+    /* var age=10;
+     var height=10.2;
+     console.log(typeof age); //number
+     console.log(typeof height);//number
+
+     var max= Number.MAX_SAFE_INTEGER; // we can get max safe integer via this
+     // if we want to store larger number than this we can use bigint
+
+     console.log(typeof  max);
+
+     var number=1000n; // get 1000 from big int
+     console.log(typeof number);//bigint*/
+
+
+
+    /* String data type*/
+
+    // var string1 = 'Hello';
+    // var string2 = "Hello";
+    // console.log(typeof string1);
+    // console.log(typeof string2);
+    //
+    // console.log(string1+string2);
+    // console.log(1+string2);
+    //
+    // //String literals
+    // var age=30;
+    // console.log("My age is " +age+ " year old");
+    // console.log(`My age is ${age} year old`);
+
+
+    // String related methods
+    //length
+    //toUpperCase
+    //toLowerCase
+    //trimLeft
+    //trimRight
+    //trim
+    //split
+    //charAt
+    //charCodeAt
+    //indexOf
+    //substr
+    //substring
+
+    // var string="        Ijse,    ";
+    // var string1="IJSE,CMJD,GDSE,RWAD";
+    // var string2="Helloo There How are you..?";
+    // console.log( string.length);
+    // console.log( string.toUpperCase());
+    // console.log( string.toLowerCase());
+    // console.log( string.trimLeft());
+    // console.log( string.trimRight());
+    // console.log( string.trim());
+    // console.log( string1.split(","));
+    // console.log( string2.charAt(1)); // return character at the index number
+    // console.log( string2.charCodeAt(2)); // return ascii code of the index number
+    // console.log( string2.indexOf("o")); // return the first index number of maching charactor
+    // console.log( string2.substr(4,5));// from to length
+    // console.log( string2.substring(4,5)); // start number and end number
+
+    //================================================================
+
+    /*  Boolean Data Type*/
+    // var b1=true;
+    // var b2=false;
+
+
+    /*Null and Undefined*/
+    /*Why we want undefined..?*/
+    // var myName; // if we declare something like this. there is no data type for myName because js is not Strong type language
+    // typeof myName; // so this represent undefined data type because it is not defined and initialized
+
+
+    /*Then what about null..?*/
+    // var myAddress = null; // we can use null when there is no value for the variable but we want to initialize it
+    // typeof myAddress; //object
+
+
+    /* Object*/
+    /*    What is an  Object..?*/
+    /* Named value container*/
+
+    // let id = "C001";
+    // let name = "Dasun";
+    // let address = "Galle";
+    // let salary = 1000.00;
+    //
+    // // js literal base Object
+    // var customer={
+    //     id:"C001", //properties (key - value)
+    //     name:"Dasun",
+    //     address:"Galle",
+    //     salary:1000.00
+    // }
+
+    // typeof customer;//object
+
+    // how to accsess values from a object
+    // customer.id // dot notation
+    //customer.name
+    //customer['id'];// bracket notation
+
+
+    // Function..?
+
+    //class
+    // public void saveCustomer(){
+    //
+    //   }
+
+
+    // // in JS
+    // //how to define a function
+    // function saveCustomer() {
+    //     console.log("Customer Save");
+    // }
+    //
+    // //how to call a function
+    // saveCustomer();
+
+
+    //Hoisting - call first and declare later
+    //variable hoisting
+    //function hoisting
+
+    // callTheMethod(); // call first
+    //
+    // //then declare
+    // function callTheMethod(){
+    //     console.log("Hello There")
+    // }
+    //
+    // //variable hoisting (only works with var)
+    // console.log(myName); // we can use the variable which was declared later
+    //
+    // var myName; //declare later
+
+
 
 
 
