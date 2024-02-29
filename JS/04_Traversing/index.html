@@ -1,0 +1,186 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversing with jQuery</title>
+</head>
+<body>
+
+<section id="mainSection">
+    <section id="subSection1">
+        <div id="div1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis culpa cupiditate, dolorem
+                eveniet illum itaque laboriosam nostrum optio qui quisquam quo quos soluta ullam unde! Adipisci
+                exercitationem nam soluta.</p>
+            <ul>
+                <li>Hello</li>
+                <li>CMJD</li>
+                <li>IJSE</li>
+            </ul>
+        </div>
+        <div id="div2">
+            <ul>
+                <li>Hello</li>
+                <li>CMJD</li>
+                <li>IJSE</li>
+            </ul>
+        </div>
+    </section>
+    <section id="subSection2">
+        <h1>Hello jQuery</h1>
+        <h2>Hello jQuery</h2>
+        <section id="para">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur corporis culpa dolorum
+                ea eaque ex modi molestiae molestias non odit officia perferendis saepe, similique tenetur. Ducimus
+                fugiat ipsum voluptate.</p>
+        </section>
+    </section>
+
+</section>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+   /*Methods that we check*/
+   /*
+       children()
+       parent()
+       parents()
+       find()
+       get()
+       eq();
+       children(":nth-child(1)");
+       children(":eq(1)");
+       []
+   * */
+
+    // Traversing with jQuery
+    $("body").children();
+    //S.fn.init(3)[section#mainSection, script, script, prevObject: S.fn.init(1)]
+
+    $("html").children(); // get all children of html
+    //S.fn.init(3)[head, body, grammarly-desktop-integration, prevObject: S.fn.init(1)]
+
+    $("html").children('body'); // select of the child
+    // S.fn.init[body, prevObject: S.fn.init(1)]
+
+    $("html").children(':nth-child(2)');
+    // S.fn.init[body, prevObject: S.fn.init(1)]
+
+    $("html").children(':nth-child(1)'); // select from psudo class
+    // S.fn.init[head, prevObject: S.fn.init(1)]
+
+
+    //==================================================================
+
+    $("#subSection1").children();
+    // S.fn.init(2) [div#div1, div#div2, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1");
+    // S.fn.init [div#div1, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children();
+    // S.fn.init(2) [p, ul, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children("ul");
+    // S.fn.init [ul, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children("ul").children();
+    // S.fn.init(3) [li, li, li, prevObject: S.fn.init(1)]0: li1:
+
+
+    $("#subSection1").children("#div1").children("ul").children(":nth-child(2)").css('color', 'red');
+    // S.fn.init [li, prevObject: S.fn.init(1)]
+
+
+    $("body").children().eq("0"); // select child
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(3)]
+
+    $("body").children().eq("1");
+    // S.fn.init [script, prevObject: S.fn.init(3)]
+
+    $("body").children().eq("2");
+    // S.fn.init [script, prevObject: S.fn.init(3)]
+
+    $("body").children(":eq(0)"); // same as the above method.. select nth child
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(1)]
+
+    $("body").children(":eq(1)");
+    // S.fn.init [script, prevObject: S.fn.init(1)]
+
+
+    $('body').children();
+    // S.fn.init(3) [section#mainSection, script, script, prevObject: S.fn.init(1)]
+
+    $('body').children(":nth-child(1)"); // return jQuery Object
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(1)]
+
+    $('body').children()[0]; // return DOM Object
+    // <section id=​"mainSection">​…​</section>​
+
+    $('body').children().get(0); // return DOM Object
+    // <section id=​"mainSection">​…​</section>​
+
+
+    //$('body').children().get(0).css(); // error //no such method in dom element
+
+
+    $('body').children().get(0); // return Dom element
+    // <section id=​"mainSection">​…​</section>​
+
+    $($('body').children().get(0)); // if we want to convert in to jQuery Object we can use $()
+    // S.fn.init [section#mainSection]
+
+    $($('body').children().get(0)).text(); // now we can call jQuery Methods
+
+
+
+
+    /*Parent Method for traversing*/
+
+    $("body").children("section").parent();
+    // S.fn.init [body, prevObject: S.fn.init(1)]
+
+    $('body').parent(); // return the one and only nearest parent
+    // S.fn.init [html, prevObject: S.fn.init(1)]
+
+    $("#div1").parent();
+    // S.fn.init [section#subSection1, prevObject: S.fn.init(1)]
+
+    $("#div1").parent().parent(); // we can call it like this also
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(1)]
+
+
+   /*Parents vs Parent*/
+
+   $('body').parents(); // return all the parent hierarchy of body to the order
+   // S.fn.init [html, prevObject: S.fn.init(1)]
+
+   $('#div1').parents();
+   // S.fn.init(4) [section#subSection1, section#mainSection, body, html, prevObject: S.fn.init(1)]
+
+   $('#div1').parent(); // return only one
+   // S.fn.init [section#subSection1, prevObject: S.fn.init(1)]
+
+   $('#div1').parents("body"); // we can filter out also
+   // S.fn.init [body, prevObject: S.fn.init(1)]
+
+   $('#div1').parents("section");
+   // S.fn.init(2) [section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
+
+
+
+   /*Find*/
+   $('body').find('p'); // we can find out something inside a element
+   // S.fn.init(2) [p, p, prevObject: S.fn.init(1)]
+
+
+
+</script>
+</body>
+</html>
