@@ -174,7 +174,7 @@
             <th scope="col">Telephone</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody id="customerTable">
           </tbody>
         </table>
       </div>
@@ -504,9 +504,9 @@
 
 
     //Store TextField Data To Table
-    let row = "<tr><td></td><td></td><td></td><td></td></tr>";
-    console.log(row);
+    let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
+    $("#customerTable").append(row)
 
 
   });
