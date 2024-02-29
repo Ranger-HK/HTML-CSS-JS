@@ -491,12 +491,23 @@
 
   $("#btnCusAdd").click(function (){
 
-    alert("Working");
+    //alert("Working");
 
-    $("#txtCusID").val();
-    $("#txtCusName").val();
-    $("#txtCusAddress").val();
-    $("#txtCusTP").val();
+    //Gather Customer TextFiled Data
+    let customerId=$("#txtCusID").val();
+    let customerName=$("#txtCusName").val();
+    let customerAddress=$("#txtCusAddress").val();
+    let customerTP=$("#txtCusTP").val();
+
+    console.log(customerId,customerName,customerAddress,customerTP ); //Print Data At Console
+    console.log(typeof customerId,typeof customerName,typeof customerAddress,typeof customerTP );//Print Data type At Console
+
+
+    //Store TextField Data To Table
+    let row = "<tr><td></td><td></td><td></td><td></td></tr>";
+    console.log(row);
+
+
 
   });
 
