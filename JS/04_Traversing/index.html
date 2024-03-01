@@ -97,6 +97,7 @@
     $("#subSection1").children("#div1").children("ul").children(":nth-child(2)").css('color', 'red');
     // S.fn.init [li, prevObject: S.fn.init(1)]
 
+   //==================================================================
 
     $("body").children().eq("0"); // select child
     // S.fn.init [section#mainSection, prevObject: S.fn.init(3)]
@@ -113,6 +114,7 @@
     $("body").children(":eq(1)");
     // S.fn.init [script, prevObject: S.fn.init(1)]
 
+   //==================================================================
 
     $('body').children();
     // S.fn.init(3) [section#mainSection, script, script, prevObject: S.fn.init(1)]
@@ -139,6 +141,7 @@
     $($('body').children().get(0)).text(); // now we can call jQuery Methods
 
 
+   //==================================================================
 
 
     /*Parent Method for traversing*/
@@ -155,6 +158,8 @@
     $("#div1").parent().parent(); // we can call it like this also
     // S.fn.init [section#mainSection, prevObject: S.fn.init(1)]
 
+
+   //==================================================================
 
    /*Parents vs Parent*/
 
@@ -174,6 +179,7 @@
    // S.fn.init(2) [section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
 
 
+   //==================================================================
 
    /*Find*/
    $('body').find('p'); // we can find out something inside a element
