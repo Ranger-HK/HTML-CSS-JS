@@ -493,6 +493,9 @@
 
     //alert("Working");
 
+    //table row overload problem solving
+    $("#customerTable>tr").off("click")
+
     //Gather Customer TextFiled Data
     let customerId=$("#txtCusID").val();
     let customerName=$("#txtCusName").val();
@@ -511,7 +514,7 @@
     //Row Click And Add to Data TextField
     $("#customerTable>tr").click(function (){
      // console.log(this); // get dom element
-     // console.log($(this)); // get Jquery Element
+     //console.log($(this)); // get Jquery Element
 
       //get row data
       let cusId = $(this).children(":eq(0)").text();
@@ -519,7 +522,7 @@
       let cusAddress = $(this).children(":eq(2)").text();
       let cusTP = $(this).children(":eq(3)").text();
 
-       //console.log(cusId,cusName,cusAddress,cusTP);
+      // console.log(cusId,cusName,cusAddress,cusTP);
 
       //set row data to textFiled after click
       $("#txtCusID").val(cusId);

@@ -1,0 +1,69 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formalised Events In jQuery</title>
+</head>
+<body>
+<h1 id="header">Hello JS..!</h1>
+<input id="txtCusID" placeholder="ID" type="text">
+<br><br>
+<input id="txtCusName" placeholder="Name" type="text">
+<br><br>
+<input id="txtCusAddress" placeholder="Address" type="text">
+<br><br>
+<input id="txtCusSalary" placeholder="Salary" type="text">
+<br><br>
+<button id="btnCustomer">Save Customer</button>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    /*
+    click(function)
+    dblclick(function)
+    focus(function)
+    blur(function)
+    keydown(function)
+    keyup(function)
+    keypress(function)
+    mousedown(function)
+    mouseup(function)
+    mousemove(function)
+    */
+
+    $("#txtCusID").keydown(function (event) { // event data object
+        console.log(event); //KeyA
+        console.log(event.code); //KeyA
+        console.log(event.key); //A
+
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusName").focus();
+        }
+    });
+
+    $("#txtCusName").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusAddress").focus();
+        }
+    });
+
+    $("#txtCusAddress").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusSalary").focus();
+        }
+    });
+
+    $("#txtCusSalary").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#header").text("Done");
+            $("#txtCusID").focus();
+        }
+    });
+</script>
+</body>
+</html>

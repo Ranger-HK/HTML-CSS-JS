@@ -1,0 +1,42 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <style>
+        div {
+            background: red;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Hello IJSE...!</h1>
+<div>
+
+</div>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+    $("div").mouseup(function () {
+        console.log("Mouse Up")
+    });
+
+    $("div").mousedown(function () {
+        console.log("Mouse Down")
+    });
+
+    $("div").mousemove(function () {
+        console.log("Mouse Move")
+    });
+</script>
+</body>
+</html>

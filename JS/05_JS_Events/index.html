@@ -1,0 +1,45 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Global Events</title>
+    <style>
+        div {
+            background: red;
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div onmousedown="printSomething()">
+
+</div>
+<br>
+<input id="txtCusID" type="text">
+<button onclick="alert('hello')">Test</button>
+<br>
+<br>
+<input id="txtCusName" type="text">
+<button onmousemove="console.log('mouse moved')">Test</button>
+<br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet, architecto aut blanditiis, facilis fugit
+    ipsam iure officia, officiis omnis possimus provident quidem quos repellendus sed sunt tempora totam
+    voluptatibus?</p>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    function printSomething(){
+        console.log('Mouse Down');
+    }
+</script>
+</body>
+</html>

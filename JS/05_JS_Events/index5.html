@@ -1,0 +1,49 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Move with Text</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello there.. How are you..?</h1>
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+    /*catch the h1*/
+
+    $("h1").css("position", "relative");
+
+
+    $(window).on("mousemove", function (e) {
+        // console.log(e.pageX, e.pageY);// mouse current location x and y values
+        $("h1").css("left", e.pageX);
+        $("h1").css("top", e.pageY);
+    });
+
+
+    let text = $('h1').text();
+    var count = 0;
+
+    function animateText() {
+        $('h1').text(text.substr(0, count));
+        count++;
+        if (count == text.length) {
+            count = 0;
+        }
+    }
+
+    setInterval(animateText, 100);
+
+</script>
+</body>
+</html>

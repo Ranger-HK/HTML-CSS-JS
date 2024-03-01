@@ -1,0 +1,78 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specified Events</title>
+  <style>
+    div {
+      background: red;
+      width: 300px;
+      height: 300px;
+
+    }
+  </style>
+</head>
+<body>
+<div >
+
+</div>
+<br>
+<input id="txtCusID" type="text">
+<button id="btnTest">Test</button>
+<br>
+<br>
+<input id="txtCusName" type="text">
+<button>Test</button>
+<br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet, architecto aut blanditiis, facilis fugit
+  ipsam iure officia, officiis omnis possimus provident quidem quos repellendus sed sunt tempora totam
+  voluptatibus?</p>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+//Specified Events
+/*  document.getElementById("btnTest").addEventListener("click",function(){
+    alert("Hello");
+  });*/
+
+
+// standrad way for writing event in jQuery
+$("#btnTest").on('dblclick',function(){
+  alert("Hello");
+});
+
+
+//Formalised Methods - Shortand Way
+$("#btnTest").click(function (){
+  console.log("Hello");
+});
+
+
+//$("#btnTest").off(); // turn off all the events of btnTest
+//$("#btnTest").off("dblclick");// turn off only dblClick event of btnTest
+
+/*
+click(function)
+dblclick(function)
+focus(function)
+blur(function)
+keydown(function)
+keyup(function)
+keypress(function)
+mousedown(function)
+mouseup(function)
+mousemove(function)
+*/
+
+
+
+
+</script>
+</body>
+</html>
