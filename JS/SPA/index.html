@@ -149,18 +149,22 @@
       <div class="mb-3 col-6">
         <label class="form-label" for="txtCusID">Customer ID</label>
         <input class="form-control" id="txtCusID" placeholder="Customer ID" type="text">
+        <p><small id="error1" class="text-danger p-1"></small> </p>
       </div>
       <div class="mb-3 col-6">
         <label class="form-label" for="txtCusName">Customer Name</label>
         <input class="form-control" id="txtCusName" placeholder="Customer Name" type="text">
+        <p><small id="error2" class="text-danger p-1"></small> </p>
       </div>
       <div class="mb-3 col-6">
         <label class="form-label" for="txtCusAddress">Customer Address</label>
         <input class="form-control" id="txtCusAddress" placeholder="Customer Address" type="text">
+        <p><small id="error3" class="text-danger p-1"></small> </p>
       </div>
       <div class="mb-3 col-6">
         <label class="form-label" for="txtCusTP">Customer Telephone Number</label>
         <input class="form-control" id="txtCusTP" placeholder="Customer Telephone Number" type="text">
+        <p><small id="error4" class="text-danger p-1"></small> </p>
       </div>
     </div>
     <div class="row">
@@ -533,7 +537,33 @@
 
     });
 
+
+    // Remove Row After Double Clicking
+    $("#customerTable>tr").dblclick(function () {
+          $(this).remove();
+    })
+
+
+
+
   });
+
+//Validation For TextField
+  var regExCusId=/^(C00-)[0-9]{3,5}$/;
+
+  $("#txtCusID").keyup(function () {
+    let input = $("#txtCusID").val();
+    if (regExCusId.test(input)){
+      $("#txtCusID").css("border","2px solid green");
+      $("#error1").text("");
+    }else{
+      $("#txtCusID").css("border","2px solid red");
+      $("#error1").text("Wrong format : C00-001");
+    }
+
+  })
+
+
 
 
 
