@@ -1,0 +1,68 @@
+<!--/**
+* @author : Ravindu Prathibha
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+    <style>
+        h1 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>0</h1>
+<button id="start">START</button>
+<button id="stop">STOP</button>
+<button id="reset">RESET</button>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+    let timerID;
+
+    $("#start").click(function () {
+        clearInterval(timerID); // off the previous timer
+        timerID = setInterval(incrementValue, 100);
+        console.log(timerID);
+    });
+
+    let count = 0;
+
+    function incrementValue() {
+        $("h1").text(count);
+        count++;
+    }
+
+
+    // How to stop a timing function..?
+    //setTimeout (create) - > clearTimeout()
+    //setInterval (create) -> clearInterval();
+
+
+    $("#stop").click(function () {
+        clearInterval(timerID); // stop a timer
+    });
+
+
+    // how to stop a timeout
+    let id = setTimeout(test, 200)
+    clearTimeout(id); // so if you wanna stop you can call clear Timeout
+
+    function test() {
+        console.log("call after 200 ms")
+    }
+
+
+    $("#reset").click(function (){
+        $("h1").text(0);
+    });
+
+
+</script>
+</body>
+</html>
