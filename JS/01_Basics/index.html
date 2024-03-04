@@ -557,6 +557,102 @@
 
 
 
+    //function  continue
+    //declaration
+    //expression (First Class Function)
+
+    // declaration
+    // function saveCustomer() {
+    //     console.log("Customer Saved");
+    // }
+    // saveCustomer();
+
+
+    // Expression (js has first class functions)
+    // var marriedState = function () {
+    //     return false;
+    // }
+    // var res = marriedState();
+    // console.log(res);
+
+
+    // Parameters in JS Functions
+    // function saveCustomer(id,name){
+    //     console.log(id,name)
+    // }
+    // saveCustomer("C001","Dasun");
+
+
+    //Case Two
+    // function saveCustomer(id,name){
+    //     console.log(id,name)
+    // }
+    // saveCustomer(); // no error
+
+
+    //Case Two
+    // function saveCustomer(){
+    //     console.log("Called")
+    // }
+    // saveCustomer("Test","Test"); // no error
+
+
+    // why the above problem does not generate any problem..?
+
+    // function saveCustomer(id,name,address){
+            //console.log(arguments);
+    //     // console.log(arguments[0],arguments[1]);
+    // }
+    // saveCustomer("C001","Kasun","pandura"); // put all the values in arguments array
+
+
+    // What about method overloading
+    // function saveCustomer(id,name,address){
+    //     console.log("id:name:address ",id,name,address);
+    // }
+    //
+    // function saveCustomer(id,name){
+    //     console.log("id:name ",id,name,arguments[2]);
+    // }
+    //
+    // saveCustomer("C001","Dasun","Galle"); // overloading not working
+    // //always call the last method
+
+
+    // boolean result of conditions
+
+    //  if({}){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //  if(10){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //  if("a"){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //
+    //  if(){ //error
+    //      console.log("true");
+    //  }
+    // //Uncaught SyntaxError: Unexpected token ')'
+    //
+    //  if(null){
+    //      console.log("true");
+    //  }
+    //  // undefined
+    //
+    //  if(undefined){
+    //      console.log("true");
+    //  }
+    //  // undefined
+
+
 </script>
 
 
