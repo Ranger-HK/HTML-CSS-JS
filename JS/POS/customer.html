@@ -116,5 +116,292 @@
     </div>
 
 </section>
+
+<!--<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
+<script>
+
+    /*hide all slide*/
+
+    $("#dashboardContent").css('display','block');
+    $("#itemContent").css('display','none');
+    $("#customerContent").css('display','none');
+    $("#orderContent").css('display','none');
+
+
+    /*Adding Click Event*/
+
+    $("#CId").click(function (){
+        $("#itemContent").css('display','none');
+        $("#customerContent").css('display','block');
+        $("#orderContent").css('display','none');
+        $("#dashboardContent").css('display','none');
+    });
+
+    $("#IId").click(function (){
+        $("#itemContent").css('display','block');
+        $("#customerContent").css('display','none');
+        $("#orderContent").css('display','none');
+        $("#dashboardContent").css('display','none');
+
+    });
+
+    $("#OrId").click(function (){
+        $("#itemContent").css('display','none');
+        $("#customerContent").css('display','none');
+        $("#orderContent").css('display','block');
+        $("#dashboardContent").css('display','none');
+
+    });
+
+    $("#DId").click(function (){
+        $("#itemContent").css('display','none');
+        $("#customerContent").css('display','none');
+        $("#orderContent").css('display','none');
+        $("#dashboardContent").css('display','block');
+
+    });
+
+    /* &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;  Functions Using &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */
+
+
+    /*Customer Side Functions*/
+
+    /*Add Customer*/
+
+    $("#btnCusAdd").click(function (){
+
+        //alert("Working");
+
+        //table row overload problem solving
+        $("#customerTable>tr").off("click")
+
+        //Gather Customer TextFiled Data
+        let customerId=$("#txtCusID").val();
+        let customerName=$("#txtCusName").val();
+        let customerAddress=$("#txtCusAddress").val();
+        let customerTP=$("#txtCusTP").val();
+
+        console.log(customerId,customerName,customerAddress,customerTP ); //Print Data At Console
+        console.log(typeof customerId,typeof customerName,typeof customerAddress,typeof customerTP );//Print Data type At Console
+
+
+        //Store TextField Data To Table
+        let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
+
+        $("#customerTable").append(row)
+
+        //Row Click And Add to Data TextField
+        $("#customerTable>tr").click(function (){
+            // console.log(this); // get dom element
+            //console.log($(this)); // get Jquery Element
+
+            //get row data
+            let cusId = $(this).children(":eq(0)").text();
+            let cusName = $(this).children(":eq(1)").text();
+            let cusAddress = $(this).children(":eq(2)").text();
+            let cusTP = $(this).children(":eq(3)").text();
+
+            // console.log(cusId,cusName,cusAddress,cusTP);
+
+            //set row data to textFiled after click
+            $("#txtCusID").val(cusId);
+            $("#txtCusName").val(cusName);
+            $("#txtCusAddress").val(cusAddress);
+            $("#txtCusTP").val(cusTP);
+
+
+        });
+
+
+        // Remove Row After Double Clicking
+        $("#customerTable>tr").dblclick(function () {
+            $(this).remove();
+        })
+
+
+
+
+    });
+    /*
+
+    //Validation For TextField
+      var regExCusId=/^(C00-)[0-9]{3,5}$/;
+
+      $("#txtCusID").keyup(function () {
+        let input = $("#txtCusID").val();
+        if (regExCusId.test(input)){
+          $("#txtCusID").css("border","2px solid green");
+          $("#error1").text("");
+        }else{
+          $("#txtCusID").css("border","2px solid red");
+          $("#error1").text("Wrong format : C00-001");
+        }
+
+      })
+    */
+
+
+    //validation started
+    // customer regular expressions
+    const cusIDRegEx = /^(C00-)[0-9]{1,3}$/;
+    const cusNameRegEx = /^[A-z ]{5,20}$/;
+    const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
+    const cusTPRegEx = /^[0-9+]{1,}$/;
+
+
+    $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').on('keydown', function (eventOb) {
+        if (eventOb.key == "Tab") {
+            eventOb.preventDefault(); // stop execution of the button
+        }
+    });
+
+    $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').on('blur', function () {
+        formValid();
+    });
+
+    //focusing events
+    $("#txtCusID").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+
+        if (eventOb.key == "Control") {
+            var typedCustomerID = $("#txtCusID").val();
+            var srcCustomer = searchCustomerFromID(typedCustomerID);
+            $("#txtCusID").val(srcCustomer.getCustomerID());
+            $("#txtCusName").val(srcCustomer.getCustomerName());
+            $("#txtCusAddress").val(srcCustomer.getCustomerAddress());
+            $("#txtCusTP").val(srcCustomer.getCustomerSalary());
+        }
+
+
+    });
+
+    $("#txtCusName").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+
+    $("#txtCusAddress").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+
+    $("#txtCusTP").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkIfValid();
+        }
+    });
+    // focusing events end
+    $("#btnCustomer").attr('disabled', true);
+
+    function clearAll() {
+        $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').val("");
+        $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').css('border', '2px solid #ced4da');
+        $('#txtCusID').focus();
+        $("#btnCustomer").attr('disabled', true);
+        loadAllCustomers();
+        $("#lblcusid,#lblcusname,#lblcusaddress,#lblcustp").text("");
+    }
+
+    function formValid() {
+        var cusID = $("#txtCusID").val();
+        $("#txtCusID").css('border', '2px solid green');
+        $("#lblcusid").text("");
+        if (cusIDRegEx.test(cusID)) {
+            var cusName = $("#txtCusName").val();
+            if (cusNameRegEx.test(cusName)) {
+                $("#txtCusName").css('border', '2px solid green');
+                $("#lblcusname").text("");
+                var cusAddress = $("#txtCusAddress").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    var cusSalary = $("#txtCusTP").val();
+                    var resp = cusTPRegEx.test(cusSalary);
+                    $("#txtCusAddress").css('border', '2px solid green');
+                    $("#lblcusaddress").text("");
+                    if (resp) {
+                        $("#txtCusTP").css('border', '2px solid green');
+                        $("#lblcustp").text("");
+                        return true;
+                    } else {
+                        $("#txtCusTP").css('border', '2px solid red');
+                        $("#lblcustp").text("Cus Salary is a required field : +9 or 07");
+                        return false;
+                    }
+                } else {
+                    $("#txtCusAddress").css('border', '2px solid red');
+                    $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
+                    return false;
+                }
+            } else {
+                $("#txtCusName").css('border', '2px solid red');
+                $("#lblcusname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+                return false;
+            }
+        } else {
+            $("#txtCusID").css('border', '2px solid red');
+            $("#lblcusid").text("Cus ID is a required field : Pattern C00-000");
+            return false;
+        }
+    }
+
+    function checkIfValid() {
+        var cusID = $("#txtCusID").val();
+        if (cusIDRegEx.test(cusID)) {
+            $("#txtCusName").focus();
+            var cusName = $("#txtCusName").val();
+            if (cusNameRegEx.test(cusName)) {
+                $("#txtCusAddress").focus();
+                var cusAddress = $("#txtCusAddress").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    $("#txtCusTP").focus();
+                    var cusSalary = $("#txtCusTP").val();
+                    var resp = cusTPRegEx.test(cusSalary);
+                    if (resp) {
+                        let res = confirm("Do you really need to add this Customer..?");
+                        if (res) {
+                            saveCustomer();
+                            clearAll();
+                        }
+                    } else {
+                        $("#txtCusTP").focus();
+                    }
+                } else {
+                    $("#txtCusAddress").focus();
+                }
+            } else {
+                $("#txtCusName").focus();
+            }
+        } else {
+            $("#txtCusID").focus();
+        }
+    }
+
+    function setButton() {
+        let b = formValid();
+        if (b) {
+            $("#btnCustomer").attr('disabled', false);
+        } else {
+            $("#btnCustomer").attr('disabled', true);
+        }
+    }
+
+    $('#btnCustomer').click(function () {
+        checkIfValid();
+    });
+    //validation ended
+
+
+
+
+
+</script>-->
 </body>
 </html>
