@@ -653,6 +653,119 @@
     //  // undefined
 
 
+
+
+    // Objects continue
+    // literal base objects
+    // function base objects (constructor base objects)
+
+    //literal base objects
+    // var customer={
+    //     id:'C001',
+    //     name:'Dasun',
+    //     address:'Galle',
+    //     salary:1000
+    // }
+    //
+    //
+    // //function base objects
+    // function Customer(){
+    //     this.id="C002";
+    //     this.name="Ramal";
+    //     this.address="Panadura";
+    //     this.salary=100.00;
+    // }
+    //
+    // // Customer();//function
+    // // this is the object
+    // var customer2= new Customer();
+
+
+    //how to add methods inside objects
+    // var customer={
+    //     id:'C001',
+    //     name:'Dasun',
+    //     address:'Galle',
+    //     salary:1000,
+    //     age:{ age:30, year:1990},
+    //     printMyName:function(){
+    //         console.log("My Name is ",this.id);
+    //     }
+    // }
+    // customer.id; //property
+    // customer.printMyName(); //if property is a method
+
+
+    //function base objects
+    // function Customer(){
+    //     this.id="C002";
+    //     this.name="Ramal";
+    //     this.address="Panadura";
+    //     this.salary=100.00;
+    //     this.printMyDetails=function(){
+    //         console.log("My Name Is ",this.name)
+    //     }
+    // }
+    //
+    // var cus2= new Customer();
+    // cus2.printMyDetails();
+
+
+    // //Can we add dynamic Properties to the js Objects..? YES
+    // var customer={
+    //     id:'C001'
+    // }
+    // customer; // {id: 'C001'}
+    //
+    // customer.name="Dasun";// added new property
+    // customer; // {id: 'C001', name: 'Dasun'}
+    //
+    // // can we add methods also..? YES
+    // customer.printMyName=function(){
+    //     console.log("My Name is "+ this.name);
+    // }
+    //
+    // customer; //{id: 'C001', name: 'Dasun', printMyName: ƒ}
+    // customer.printMyName();
+    //
+    //
+    //
+    // // Function base Objects..? YES
+    // function Customer(){
+    //     this.id="C002";
+    // }
+    // var customer2= new Customer();
+    //
+    // customer2 ; //Customer{id: 'C002'}
+    // customer2.age=10;
+    // customer2; //Customer{id: 'C002', age: 10}
+    //
+    // customer2.printMyID=function(){
+    //     console.log("My ID is "+ this.id);
+    // }
+    //
+    // customer2.printMyID();
+
+
+    // Constructor base..?
+    //here we should submit values when the object is created
+    //  var customer={
+    //      id:"C001",
+    //      name:"Dasun",
+    //      address:"Galle",
+    //      salary:1000.00
+    //  }
+    //
+    //  // Constructor behaviour from Functions
+    //  function CustomerDTO(id,name,address,salary){
+    //      this.id=id;
+    //      this.name=name;
+    //      this.address=address;
+    //      this.salary=salary;
+    //  }
+    //
+    // var customer2= new CustomerDTO("C001","Kamal","Panadura",100.30);
+    // var customer3= new CustomerDTO("C002","Ramal","Galle",300.30);
 </script>
 
 
