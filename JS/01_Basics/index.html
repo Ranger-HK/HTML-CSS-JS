@@ -766,6 +766,458 @@
     //
     // var customer2= new CustomerDTO("C001","Kamal","Panadura",100.30);
     // var customer3= new CustomerDTO("C002","Ramal","Galle",300.30);
+
+
+
+    // What about encapsulation..?
+
+    // var customer = {
+    //     id: "C001" //property
+    // }
+    // // no safety with properties
+    // customer.name="Kamal"; // add new property
+    // delete customer.name; //remove property name
+    // customer.id="C002"; // can change value
+    // Object.keys(customer); // can count keys
+
+    // what about objects using Functions..?
+
+    // function Item(code) {
+    //     this.code = code;
+    // }
+    //
+    // var item = new Item("I001");
+    // item.code = "I002"; // can change value
+    // item.name = "Lux";// add new property
+    // delete item.code;  //remove property name
+    // Object.keys(item);// can count keys
+
+
+    /*Property Descriptors*/
+    //value
+    //enumerable
+    //configurable
+    //writable // stop changing values
+
+
+    // every property we have property descriptors
+    //how to view them..?
+    // var customer={
+    //     id:'C001'
+    // }
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id');
+    // //{value: 'C001', writable: true, enumerable: true, configurable: true}
+    //
+    //
+    // // lets change the writable property to false
+    // Object.defineProperty(customer,'id',{
+    //     writable:false // id value cannot change
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id');
+    // //{value: 'C001', writable: false, enumerable: true, configurable: true}
+    //
+    // customer.id="C004"; // no change happen
+    //
+    // customer.id;//C001
+    //
+    //
+    // // what about enumerable
+    // Object.defineProperty(customer,'id',{
+    //     enumerable: false // remove Object key from countable state // Object.keys();
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id');
+    // // {value: 'C001', writable: false, enumerable: false, configurable: true}
+    //
+    // //can we delete ..? yes
+    // //count = no
+    // //value change = No
+    //
+    // //can we change writable to true again..? yes
+    // Object.defineProperty(customer,'id',{
+    //     writable: true// can change no problem
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id');
+    // // {value: 'C001', writable: true, enumerable: false, configurable: true}
+    //
+    // //can we delete ..? yes
+    // //count = no
+    // //value change = Yes
+    //
+    //
+    // // What about configurable..?
+    //
+    // Object.defineProperty(customer,'id',{
+    //     configurable: false
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id');
+    // // {value: 'C001', writable: true, enumerable: false, configurable: false}
+    //
+    // //can we delete ..? no
+    // //count = no
+    // //value change = Yes
+    //
+    //
+    // // Special Behaviours in Configurable
+    // //can we turn on configurable again after false..? No
+    //
+    // // Object.defineProperty(customer,'id',{
+    // //     configurable: true// no
+    // // });
+    //
+    //
+    // // can we change other property descriptors..?
+    // // writable..?
+    // // we can do it if it is true
+    // Object.defineProperty(customer,'id',{
+    //     writable: false// can change true to false one time
+    // });
+    //
+    // // this is error
+    // Object.defineProperty(customer,'id',{
+    //     writable: true// no.. no allowed// because configurable is false
+    // });
+    //
+    // // after applying false to the configurable you cannot change anything of the property
+
+
+
+
+
+    //There are two types of properties
+    //Data Properties
+    //Accessor properties
+
+
+    // Data properties..?
+
+    // var customer={
+    //     id:'C001', // data properties
+    //     name:'Kasun'
+    // }
+    //
+    // // value - c001
+    // //enumerable
+    // //configurable
+    // //writable
+    //
+    // function Item(){
+    //     this.id="C001"; // data property
+    // }
+    // var item=new Item();
+    //
+    //
+    //
+    // //Accessor Properties
+    // // the properties which dont have direct values..?
+    //
+    // // Property Descriptors..?
+    //
+    // //enumerable = false
+    // //configurable=false
+    // //get
+    // //set
+    //
+    // var color={
+    //  // id: // we cannot create properties without values. if we want to do that we have to use the following way
+    //
+    // }
+    //
+    // // how to create Accessor properties..?
+    // Object.defineProperty(color,'id',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     }
+    // });
+    //
+    // Object.defineProperty(color,'name',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     }
+    // });
+    //
+    // Object.defineProperty(color,'address',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     },
+    //     enumerable:true,
+    //     configurable:true,
+    //     // writable:true // error
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(color,'id');
+    // //{enumerable: false, configurable: false, get: ƒ, set: ƒ}
+    //
+    // color.id="Red"; // set the value through setter
+    // color.id; //'Red' // get the value through setter
+    //
+    //
+    // //missing property descriptors in accessor properties
+    // // writable = because there is no direct value we dont need writable
+    // // value = no direct value
+
+
+    // encapsulate
+
+    // var customer={
+    //     id:"C001", // we cannot be able to access them directly (private) // we can set enumerable false.. but its not a complete solution
+    //     name:"Dasun",
+    //     address:"Galle",
+    //     salary:100.00,
+    //     getCustomerID:function (){
+    //         return this.id; // this should be allowed
+    //     },
+    //     setCustomerID:function (id){
+    //         this.id=id;
+    //     }
+    // }
+
+    // what options..?
+    // customer.id;
+
+    // function Customer(id,name,address,salary){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.address=address;
+    //     this.salary=salary;
+    //     this.getCustomerID=function (){
+    //         return this.id;
+    //     }
+    //     this.setCustomerID=function (id){
+    //         this.id=id;
+    //     }
+    // }
+    //
+    // var c1= new Customer("C001","Dasun","Galle",1000);
+    // // c1.address; if this is ok. there is no encapsulation // not allow
+    //
+    // c1.getCustomerID(); // allow
+    // c1.setCustomerID("C002"); // allow
+
+
+    // // Variable scope
+    // var a=10; // global
+    //
+    // function hello(){
+    //     var name="Dasun"; // local - function scope
+    //     console.log(a);
+    //
+    // }
+    // console.log(name); // not accsecible
+    //
+    //
+    // // case 2
+    // {
+    //     var i=0;
+    //
+    // }
+    // console.log(i); // this is ok
+
+
+    // // Make encapsulated Objects Using JS variable scopes
+    // function CustomerDTO(id, name, address, salary) {
+    //     var id = id;
+    //     var name = name;
+    //     var address = address;
+    //     var salary = salary;
+    //
+    // }
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.id; // not allowed
+    //
+    //
+    // function CustomerDTO(id, name, address, salary) {
+    //     var id = id;
+    //     var name = name;
+    //     var address = address; // these are not visible to the CustomerDTO Objects
+    //     var salary = salary;
+    //
+    //     this.getCustomerID = function () { // if you use this keyword for methods or properties you can used them in Objects
+    //         return id;
+    //     }
+    //
+    // }
+    //
+    //
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.getCustomerID(); // allowed
+    // // cc.id // not allowed
+    //
+    //
+    // // then we can create encapsulation using this
+    // function CustomerDTO(id, name, address, salary) {
+    //     var __id = id; // we use this convention to show these are absolutely private
+    //     var __name = name;
+    //     var __address = address;
+    //     var __salary = salary;
+    //
+    //     this.getCustomerID = function () {
+    //         return __id;
+    //     }
+    //     this.setCustomerID = function (v) {
+    //         __id = v;
+    //     }
+    // }
+    //
+    //
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.id; // not allowed
+    // cc.setCustomerID("C004"); // ok
+    // cc.getCustomerID(); // ok
+
+
+
+
+    // Prototype base Inheritance
+    // var customer={
+    //     id:"C001"
+    // }
+    //
+    // Object.prototype// we can access the prototype of Object
+    // Object.prototype.age=100; // we can add  new Property to prototype
+    //
+    // //now when we created objects we can use the age property for all objects
+    //
+    // customer.age; //ok
+    //
+    // var newCustomer={
+    //
+    // }
+    // newCustomer.age; //ok
+
+
+    //OOP - Inheritance
+    // what is a prototype..?
+
+    // var customer={
+    //     id:'C001'
+    // }
+    //
+    // function Customer(){
+    //     this.id="C001";
+    // }
+    //
+    // var customer2=new Customer();
+    // customer2;
+    //
+    // customer2.id
+
+
+    /*function Vehicle(model, year) {
+        this.model = model;
+        this.year = year;
+        this.park = function () {
+            return this.model + "-" + this.year + " is going to park";
+        }
+    }
+
+    var v1 = new Vehicle("Benz", 2022);
+    var res = v1.park();
+    console.log(res);
+
+
+    function Car(model,year){
+
+    }
+
+    var c= new Car("Toyota",2019);
+    c.park();
+*/
+
+    /*  function Vehicle(model, year) {
+          this.model = model;
+          this.year = year;
+          this.park = function () {
+              return this.model + "-" + this.year + " is going to park";
+          }
+      }
+
+      function Car(model,year){
+
+      }
+
+      Car.prototype=Vehicle.prototype;
+
+      Vehicle.prototype.testVehicle=100;
+      Car.prototype.testCar=200;
+
+      var c= new Car("Toyota",2019); // under the Vehicle Prototype
+      var v= new Vehicle("Benz",2020); // under the vehicle Prototype
+
+
+      c.testVehicle;
+      c.testVehicle;
+      v.testCar;
+      v.testVehicle;
+  */
+
+
+
+    // Solution for Inheritance Problem
+    //case 1
+    // function Vehicle(model,year){
+    //     this.model=model;
+    //     this.year=year;
+    //     this.park=function (){
+    //         return this.model+"-"+this.year+" is going to park";
+    //     }
+    // }
+    //
+    //
+    // function Car(model,year){
+    //     Vehicle.apply(this,arguments);
+    // }
+    //
+    //
+    // Car.prototype=Object.create(Vehicle.prototype);//create an empty object referring to the Vehicle prototype
+    // Car.prototype.constructor=Car;
+    //
+    //
+    // var v= new Vehicle("Toyota",2019);
+    // var c= new Car("Benz",2021);
+    // c.park(); //'Benz-2021 is going to park'
+
+
+
+
+    // // Inheritance Case 2
+    // function Animal(id,name){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.cry=function (){
+    //         return "The "+this.name+"-"+this.id+" is Crying";
+    //     }
+    // }
+    //
+    // var a= new Animal("A001","Dog");
+    //
+    // function Cat(id,name){
+    //     Animal.apply(this,arguments);
+    // }
+    //
+    // var c= new Cat("A002","Cat");
+    //
+    //
+    // Cat.prototype=Object.create(Animal.prototype);
+    // Cat.prototype.constructor=Cat;
+    //
+    //
+    // var c2= new Cat("A003","Cat 2");
+
+
 </script>
 
 
