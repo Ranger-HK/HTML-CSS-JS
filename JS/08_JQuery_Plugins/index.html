@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Plugins</title>
+    <style>
+        div {
+            height: 600px;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img alt="" src="assets/images/abc-123.jpg">
+</div>
+
+
+<script src="assets/jquery-3.6.0.min.js"></script>
+<script src="assets/oridomi.min.js"></script>
+<script>
+
+    var folded = new OriDomi('div', {
+        vPanels:          5,     // number of panels when folding left or right (vertically oriented)
+        hPanels:          3,     // number of panels when folding top or bottom
+        speed:            1200,  // folding duration in ms
+        ripple:           2,     // backwards ripple effect when animating
+        shadingIntensity: .5,    // lessen the shading effect
+        perspective:      800,   // smaller values exaggerate 3D distortion
+        maxAngle:         40,    // keep the user's folds within a range of -40 to 40 degrees
+        shading:          'soft' // change the shading type
+    });
+
+    folded.accordion(30);
+    folded.foldUp();
+</script>
+</body>
+</html>

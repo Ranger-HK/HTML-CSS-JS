@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery UI</title>
+    <link rel="stylesheet" href="assets/jquery-ui.min.css">
+    <style>
+        #mainDiv {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        #subDiv {
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div id="mainDiv"></div>
+<div id="subDiv"></div>
+
+<script src="assets/jquery-3.6.0.min.js"></script>
+<script src="assets/jquery-ui.min.js"></script>
+<script>
+    $( "#subDiv" ).draggable();
+
+    $( "#mainDiv" ).droppable({
+        drop: function( event, ui ) {
+            $(this).append("<h1>Hello</h1>");
+        }
+    });
+
+    $( "#mainDiv" ).resizable();
+</script>
+</body>
+</html>

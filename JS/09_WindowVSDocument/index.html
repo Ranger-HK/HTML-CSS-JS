@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <style>
+        #loader_container {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background: white;
+        }
+
+        #loader_container > img {
+            width: 700px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="loader_container">
+    <img alt="" src="assets/images/loader.gif">
+</div>
+
+
+<h1>Window vs Document</h1>
+<iframe src="http://ijse.lk" frameborder="0" width="100%" height="800px"></iframe>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    $(window).on('load', function () {
+        console.log("Window Loaded");
+        $("#loader_container").fadeOut(1000);
+    });
+
+
+    $(document).ready(function () {
+        console.log("Document Ready");
+    });
+
+    $(function () {
+        console.log("Document Loaded");
+    });
+
+
+</script>
+</body>
+</html>
