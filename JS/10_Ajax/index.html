@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Implementation</title>
+</head>
+<body>
+<h1>Hello Ajax..!</h1>
+<h2>Let's Implement Ajax With XMLHTTPRequest Object</h2>
+<p id="display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur culpa quaerat ratione
+    tenetur vel voluptatibus! Accusamus aliquam aliquid asperiores exercitationem fugiat ipsum iste voluptate. Adipisci
+    aliquam quas repellat. Quia.</p>
+<button id="btn" type="button">Send A Request</button>
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+ /* //XMLHTTP PROPERTIES
+  responseText  - print response in console
+  status        - check status values in number
+  readyState    - check status initial state
+
+*/
+    // $("#btn").click(function () {
+    //     console.log("Request Started")
+    //
+    //     var http = new XMLHttpRequest(); //---> create ajax object
+    //     console.log(http.status, "After the XMLHttpRequest Object Created"); // Uninitialized
+    //
+    //     http.open("GET", "db/db.txt"); //---> Ready To Send Request
+    //     console.log(http.status, "After the Open Method invoked"); // Loading
+    //
+    //     console.log(http.responseText); // Print Out Put Console
+    //     console.log(http.status, "After the Response Text Printed"); // Loading
+    //
+    //     http.send(); //--->  Send Request
+    //     console.log(http.status, "After the Send Method is Invoked"); // Loading
+    //
+    //     console.log("Request Finished")
+    // });
+
+
+ /*   $("#btn").click(function () {
+      console.log("Request Started")
+
+      var http = new XMLHttpRequest(); //---> create ajax object
+      console.log(http.readyState, "After the XMLHttpRequest Object Created"); // Uninitialized
+
+      http.open("GET", "db/db.txt"); //---> Ready To Send Request
+      console.log(http.readyState, "After the Open Method invoked"); // Loading
+
+      console.log(http.responseText); // Print Out Put Console
+      console.log(http.readyState, "After the Response Text Printed"); // Loading
+
+      http.send(); //--->  Send Request
+      console.log(http.readyState, "After the Send Method is Invoked"); // Loading
+
+      console.log("Request Finished")
+    });
+*/
+/*
+
+    $("#btn").click(function (){
+
+        //Ready Status of AJAX requests
+        //0 - Uninitialized
+        //1 - Loading
+        //2 - Loaded
+        //3 - Interactive
+        //4 - Completed
+
+        console.log("Request Started")
+        var http=new XMLHttpRequest(); //---> create ajax object
+        console.log(http.readyState,"After the XMLHttpRequest Object Created"); // Uninitialized
+
+        http.open("GET","db/db.txt");
+        console.log(http.readyState,"After the Open Method invoked"); // Loading
+
+        console.log(http.responseText);
+        console.log(http.readyState,"After the Response Text Printed"); // Loading
+
+        http.send();
+        console.log(http.readyState,"After the Send Method is Invoked"); // Loading
+
+        //when the requests status are changed..please run this
+        http.onreadystatechange=function(){
+            console.log(http.readyState,"Inside On Ready State Change Event"); //Loaded, //Interactive //Completed
+            console.log(http.status);
+            console.log(http.responseText);
+        }
+
+        console.log("Request Finished");
+
+    });*/
+
+
+      $("#btn").click(function (){
+        console.log("Started");
+        var http= new XMLHttpRequest();
+        http.open("GET","db/db.txt",false); //false = synchronous (blocking) //true(default) async(nonblocking)
+        http.onreadystatechange=function(){
+             http.readyState; //XMLHttpRequest Object == 4
+             http.status; // server // server response is ok = 200
+
+             if (http.readyState==4 && http.status==200){ // Server Response is ok and Request processing completed
+              $("#display").text(http.responseText);
+              console.log(http.responseText);
+            }
+        }
+        http.send();
+        console.log(http.responseText);
+        console.log("Ended");
+
+      });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Hello there.. im db.txt. I'm inside a folder.. and these are my contents
+Hello.. im updated
+hello dd
+id,name,address,salary
+C001,Dasun,Galle,1000
+C002,Kamal,Panadura,2000
