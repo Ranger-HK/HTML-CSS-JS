@@ -97,7 +97,7 @@
       $("#btn").click(function (){
         console.log("Started");
         var http= new XMLHttpRequest();
-        http.open("GET","db/db.txt",false); //false = synchronous (blocking) //true(default) async(nonblocking)
+        http.open("GET","db/db.txt",true); //false = synchronous (blocking) //true(default) async(nonblocking)
         http.onreadystatechange=function(){
              http.readyState; //XMLHttpRequest Object == 4
              http.status; // server // server response is ok = 200
